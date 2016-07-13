@@ -12,6 +12,14 @@ object Main {
 
   /**
    * Exercise 1
+    *      1
+    *     1 1
+    *    1 2 1
+    *   1 3 3 1
+    *  1 4 6 4 1
+    *     ...
+    *
+    *This is the pascal triangle
    */
     def pascal(c: Int, r: Int): Int = {
       if( r == c || c == 0) 1 else (pascal(c, r-1) + pascal(c-1, r-1))
@@ -19,8 +27,25 @@ object Main {
   
   /**
    * Exercise 2
+    * chars.isEmpty: Boolean returns whether a list is empty
+    * chars.head: Char returns the first element of the list
+    * chars.tail: List[Char] returns the list without the first element
+    * ####TESTING#####
+    * You can use the toList method to convert from a string to aList[Char]: e.g "(just an)example".toList
    */
-    def balance(chars: List[Char]): Boolean = {true}
+    def balance(chars: List[Char]): Boolean = {
+
+      def check(chars: List[Char], n: Int, flag: Boolean): Int = {
+        if (chars.isEmpty) {
+          if ( flag == true) n else -3}
+        else {
+          if (chars.head == ')') check(chars.tail, 1, true) + n else
+            if (chars.head == '(') check(chars.tail, -1, false) + n else check(chars.tail, n, flag) }
+      }
+
+      if (check(chars,0, false) == 0) true
+      else false
+  }
   
   /**
    * Exercise 3

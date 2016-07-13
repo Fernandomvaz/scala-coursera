@@ -1,3 +1,7 @@
 sbt test
 test
 exit
+test
+TEST
+test
+exit

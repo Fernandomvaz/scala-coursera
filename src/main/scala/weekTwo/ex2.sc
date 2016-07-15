@@ -1,19 +1,17 @@
-object exercises2 {
-
-  /**
-   * Tail recursion of sum
-   * Higher Order Functions
-   * Functional lanaguages treat functions as first-class values
-   * This means a function can be passed as a parameter and returned
-   * as result
-   * -> More Flexible
-   *
+/**
+  * Tail recursion of sum
+  * Higher Order Functions
+  * Functional lanaguages treat functions as first-class values
+  * This means a function can be passed as a parameter and returned
+  * as result
+  * -> More Flexible
+  *
 
 
-   * Function Types
-   * A => B is the type of a function that takes an argument
-   * of a type A and return type B
-   * (f: Int => Int) is the map integers to integers
+  * Function Types
+  * A => B is the type of a function that takes an argument
+  * of a type A and return type B
+  * (f: Int => Int) is the map integers to integers
 
 
     Anonymous Functions
@@ -33,8 +31,8 @@ object exercises2 {
 
      def sumInts(a: Int, b: Int) = sum(x => x, a, b)
      def sumCubes(a: Int, b: Int) = sum(x => x*x*x, a, b)
-   */
-
+  */
+object exercises2 {
 
 
   def sum(f: Int => Int, a: Int, b: Int) = {

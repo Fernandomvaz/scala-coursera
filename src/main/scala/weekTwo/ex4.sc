@@ -23,4 +23,21 @@ object ex4 {
     iterate(firstGuess) /*CALLING*/
   }
   fixedPoint(x => 1 + x/2)(1)
+
+
+  /**
+    * Expressive power of a lagnauge is increased if we can functions
+    * as arguments
+    */
+
+  def avarageDamp(f: Double => Double)(x: Double) = (x + f(x)) / 2
+  def sqrt(x: Double) =
+    fixedPoint(avarageDamp(y => x / y))(1)
+
+  /**
+    * Avarage Dump takes one function as argument and return another function
+    *
+    */
+
+  sqrt(2)
 }

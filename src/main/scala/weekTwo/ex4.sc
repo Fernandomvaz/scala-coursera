@@ -40,4 +40,46 @@ object ex4 {
     */
 
   sqrt(2)
+
+
+  /**
+    * | Denote an alternative, [...] an option (0 or 1)
+    * {...} a repetition (0 or more)
+    *
+    * Type         = SimpleType | FunctionType
+    * FunctionType = SimpleType '=>' Type
+    *               | '(' [Types] ')' '=>' Type
+    * SimpleType   = Ident
+    * Types        = Type { '.' Type}
+    *
+    * A Type can be Int, Double, Byte, Short, Char, Long, Float
+    *
+    *
+    * Expressions can be:
+    *  -> An identifier such as x, isGoodEnough,
+    *  -> A literal, like 0,1.0, "abc"
+    *  -> A function application, like sqrt(x)
+    *  -> An operator application, like -x, y + x,
+    *  -> A selection, like math.abs
+    *  -> A conditional expression, like if (x < 0) -x else x
+    *  -> A block, like { val x = math.abs(y) ; x * 2 }
+    *  -> An anonymous function, like x => x + 1
+    *
+    * Definition
+    *   Def         = FunDef | ValDef
+    *   FunDef      = def ident {'{' [Parameters] '}'}
+    *                 [':' Type] '=' Expr
+    *   ValDef      = val ident [':' Type] '=' Expr
+    *   Parameter   = ident ':' [ '=>' ] Type
+    *   Parameters  = Parameter { ',' Parameter }
+    *
+    *  A definition can be:
+    *   A function definition, like def square(x: Int) = x * x
+    *   A value definition, like val y = square(2)
+    *
+    *  A Parameter can be:
+    *   A call-by-value parameter, like (x: Int),
+    *   A call-by-name parammeter, like (y: => Double).
+    *
+    */
 }

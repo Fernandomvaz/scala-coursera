@@ -1,14 +1,4 @@
-object exercises3 {
-
-  /**
-    *  Currying
-    * sumInt(a: Int, b: Int) = sum(x => x, a, b)
-    * sumCubes(a: Int, b: Int) = sum(x => x * x * x, a, b)
-    * sumFact(a: Int, b: Int) = sum(fact, a, b)
-    * a and b get passed unchanged
-    */
-
-
+object ex3 {
   def sum(f: Int => Int): (Int, Int) => Int = {
     def sumF(a: Int, b: Int): Int =
       if (a > b) 0
@@ -31,6 +21,13 @@ object exercises3 {
 
   fact(5)
 
+  /**
+    *  Currying
+    * sumInt(a: Int, b: Int) = sum(x => x, a, b)
+    * sumCubes(a: Int, b: Int) = sum(x => x * x * x, a, b)
+    * sumFact(a: Int, b: Int) = sum(fact, a, b)
+    * a and b get passed unchanged
+    */
 
 
   /**
